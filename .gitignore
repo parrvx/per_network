@@ -1,0 +1,8 @@
+/.direnv
+/data
+/output
+/src/my_project/__pycache__
+/tests/__pycache__
+/src/per_bank/__pycache__
+/src/per_bank/parsers/__pycache__
+/src/per_bank/correction/__pycache__

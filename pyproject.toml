@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_data_project"
+version = "0.1.0"
+description = "A modern data processing project using Nix, Polars, DuckDB, and Plotnine"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+keywords = ["data", "polars", "duckdb", "nix", "scrapers", "plotnine"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Information Analysis"
+]
+dependencies = [
+    "polars",
+    "duckdb",
+    "httpx",            # High-performance asynchronous requests
+    "beautifulsoup4",   # Link extraction from municipal websites
+    "pdfplumber",       # Surgical text extraction from complex PDFs
+    "ipykernel",        # Kernel para suporte de execução no Quarto/Jupyter
+    "plotnine",         # Visualização de dados minimalista e vetorial
+    "mizani"            # Formatação de eixos e escalas do Plotnine
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+pythonpath = ["src"]
